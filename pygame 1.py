@@ -23,7 +23,7 @@ while running:
     screen.fill((186,203,240))
     screen.blit(pie, pie_rect)
     pygame.draw.rect(screen,(255, 255, 255),(160,100,300,250))
-    pygame.draw.circle(screen, (0,0,255),(220,180), 50, 6)
+    pygame.draw.circle(screen, (0,0,255),(220,180), 50, 6)#blue
     pygame.draw.circle(screen,(0,0,0),(310,180),50,6) #black ring
     pygame.draw.circle(screen,(255,0,0),(400,180),50,6) #red ring
     pygame.draw.circle(screen,(255,255,0),(255,250),50,6) #yellow ring

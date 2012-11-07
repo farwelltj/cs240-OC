@@ -1,40 +1,38 @@
 import random
 
-
 def gpsGetLongLat():
-	latitude = 0.0
-	longitude = 0.0
-	return longitude, latitude
-
-
+    latitude = 0.0
+    longitude = 0.0
+    return longitude, latitude
 
 class Waypoint(object):
-	def __int__(self, latitude, longitude, name= ''):
-		self.latitude = 0.0
-		self.longitude = 0.0
-		self.name = ' '
+    def __int__(self, latitude, longitude, name=''):
+        self.latitude = latitude
+        self.longitude = longitude
+        self.name = name
+        
 
-class Path(objecet):
-	def __int__(self, name=''):
-		self.waypoints = []
-		self.name = name
+class Path(object):
+    def __int__(self, name=''):
+        self.waypoints = []
+        self.name = name
 
-	def add_waypoint(self, waypoint):
-		self.waypoints.append(waypoint)
+    def add_waypoint(self, waypoint):
+        self.waypoints.append(waypoint)
 
 
 
-w1 = waypoint()
+w1 = Waypoint(0, 0)
 print w1.latitude
 print w1.longitude
 print w1.name
 w1.latitude = 40
 print w1.latitude
 
-w2 = waypoint(39.83333, -98.5833)
+w2 = Waypoint(39.83333, -98.5833)
 w2 = 'Middle of the USA'
 
-w3 = waypoint(40.0755, -76.3299 'Olivet, MI')
+w3 = Waypoint(40.0755, -76.3299, 'Olivet, MI')
 
 w4 = Waypoint(3, 5)
 w5 =(3, 8, 'right here')

@@ -1,5 +1,10 @@
-class hero:
-	name = raw_input('character name')
+#	file = ('')
+ 
+ user = raw_input('')
+
+
+#	class hero:
+#	name = raw_input('character name'):
 
 
 
@@ -9,7 +14,20 @@ class hero:
 #	god = raw_input('insert god here')
 
 
-#class attributes:
+#	class attributes:
+attributes = 10
+epics = 10 
+
+
+class attributes:
+	strength = 10
+	strength.epic = 10
+	while strength:
+		raw_input('strength attribute')
+	else:
+		raw_input('strenght epics')if epics == attributes:
+user - attributes
+
 
 
 

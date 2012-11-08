@@ -58,6 +58,9 @@ def load_ship():
     ship.set_colorkey((191, 220, 191))
     return ship
 
+#def movement()
+    
+
 def main(screen):
     running = True
 

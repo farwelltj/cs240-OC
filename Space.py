@@ -75,10 +75,23 @@ def main(screen):
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
                 # exit()
                 running = False
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_w:
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_a:
-            if event.type == pygame.KEYDOWN and event.key == pygame.k_s:
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_d:
+            # if event.type == pygame.KEYDOWN and event.key == pygame.K_w:
+            # elif event.type == pygame.KEYDOWN and event.key == pygame.K_a:
+            # elif event.type == pygame.KEYDOWN and event.key == pygame.k_s:
+            # elif event.type == pygame.KEYDOWN and event.key == pygame.K_d:
+
+
+            x, y = (0,0)
+        # key handle to move ship
+            key = pygame.KEYDOWN
+            if key[K_a]:
+                x-=1
+            if key[K_d]:
+                x+=1
+            if key[K_w]:
+                y-=1
+            if key[K_s]:
+                y+=1
 
 screen = init()
 main(screen)

@@ -58,8 +58,8 @@ def load_ship():
     ship.set_colorkey((191, 220, 191))
     return ship
 
-#def movement()
-    
+#   def movement(update):
+
 
 def main(screen):
     running = True
@@ -75,7 +75,10 @@ def main(screen):
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
                 # exit()
                 running = False
-
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_w:
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_a:
+            if event.type == pygame.KEYDOWN and event.key == pygame.k_s:
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_d:
 
 screen = init()
 main(screen)

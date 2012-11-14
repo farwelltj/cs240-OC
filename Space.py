@@ -4,8 +4,7 @@
 import random
 import pygame
 
-width, height = 800, 600
-
+width, height = 1420, 600
 def init():
     pygame.init() # Initialized pygame module
 
@@ -58,49 +57,46 @@ def load_ship():
     ship.set_colorkey((191, 220, 191))
     return ship
 
-#   def movement(update):
+def load_bubble():
+    bubble = pygame.image.load('bubble.bmp').convert()
+    #raw_size = ship.get_size()
+
+    return bubble
 
 
 def main(screen):
     running = True
 
 
-    x, y = (0,0)
-
+    
+    bubble = load_bubble()
     ship = load_ship()
     space = build_space(screen)
     while running:
         screen.blit(space, (0, 0))
         screen.blit(ship, (100, 100))
+        screen.blit(bubble, (205, 300))
         pygame.display.flip() # Display screen in window
+
+        x, y = (100,100)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
                 # exit()
                 running = False
             if event.type == pygame.KEYDOWN and event.key == pygame.K_w:
-                while true:
-                    if pygame.k_w is pygame.KEYDOWN:
-                        x-=1
-                    if false:
-                        x=0a
+                y-=1
+            
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_a:
+                x-=1
+            
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
+                y+=1
 
-            # elif event.type == pygame.KEYDOWN and event.key == pygame.K_a:
-            # elif event.type == pygame.KEYDOWN and event.key == pygame.k_s:
-            # elif event.type == pygame.KEYDOWN and event.key == pygame.K_d:
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_d:
+                x+=1
 
 
-        #    x, y = (0,0)
-        # # key handle to move ship
-        #     key = pygame.KEYDOWN
-        #     if key[K_a]:
-        #         x-=1
-        #     if key[K_d]:
-        #         x+=1
-        #     if key[K_w]:
-        #         y-=1
-        #     if key[K_s]:
-        #         y+=1
 
 screen = init()
 main(screen)

@@ -4,7 +4,7 @@
 import random
 import pygame
 
-width, height = 1420, 600
+width, height = 800, 600
 def init():
     pygame.init() # Initialized pygame module
 
@@ -59,8 +59,14 @@ def load_ship():
 
 def load_bubble():
     bubble = pygame.image.load('bubble.bmp').convert()
-    #raw_size = ship.get_size()
+    raw_size = bubble.get_size()
 
+    bubble = bubble.subsurface((0,0, raw_size[0] / 2, raw_size[1] / 2))
+    new_size = bubble.get_size()
+
+    bubble = bubble.subsurface((new_size[0] / 2 - 10, new_size[1] / 2, new_size[0] / 2 + 10, new_size[1] / 2))
+    bubble.set_colorkey((191, 220, 191))
+    
     return bubble
 
 

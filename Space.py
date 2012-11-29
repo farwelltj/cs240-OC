@@ -4,12 +4,15 @@
 import random
 import pygame
 
-width, height = 800, 600
+window_width = 800
+window_height = 600
+
+
 def init():
     pygame.init() # Initialized pygame module
 
     # Screen
-    return pygame.display.set_mode((width, height))
+    return pygame.display.set_mode((window_width, window_height))
 
 def draw_space(surface, stars):
     surface.fill((0, 0, 0)) # Draw the vacuum of space
@@ -57,17 +60,17 @@ def load_ship():
     ship.set_colorkey((191, 220, 191))
     return ship
 
-def load_bubble():
-    bubble = pygame.image.load('bubble.bmp').convert()
-    raw_size = bubble.get_size()
+# def load_bubble():
+#     bubble = pygame.image.load('bubble.bmp').convert()
+#     raw_size = bubble.get_size()
 
-    bubble = bubble.subsurface((0,0, raw_size[0] / 2, raw_size[1] / 2))
-    new_size = bubble.get_size()
+#     bubble = bubble.subsurface((0,0, raw_size[0] / 2, raw_size[1] / 2))
+#     new_size = bubble.get_size()
 
-    bubble = bubble.subsurface((new_size[0] / 2 - 10, new_size[1] / 2, new_size[0] / 2 + 10, new_size[1] / 2))
-    bubble.set_colorkey((191, 220, 191))
+#     bubble = bubble.subsurface((new_size[0] / 2 - 10, new_size[1] / 2, new_size[0] / 2 + 10, new_size[1] / 2))
+#     bubble.set_colorkey((191, 220, 191))
     
-    return bubble
+#     return bubble
 
 
 def main(screen):
@@ -75,32 +78,35 @@ def main(screen):
 
 
     
-    bubble = load_bubble()
+#    bubble = load_bubble()
     ship = load_ship()
     space = build_space(screen)
     while running:
         screen.blit(space, (0, 0))
         screen.blit(ship, (100, 100))
-        screen.blit(bubble, (205, 300))
+ #       screen.blit(bubble, (205, 300))
         pygame.display.flip() # Display screen in window
 
-        x, y = (100,100)
+        x = window_width / 2
+        y = window_width / 2
+
+
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_q):
                 # exit()
                 running = False
             if event.type == pygame.KEYDOWN and event.key == pygame.K_w:
-                y-=1
+                y-=10
             
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_a:
-                x-=1
+                x-=10
             
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
-                y+=1
+                y+=10
 
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_d:
-                x+=1
+                x+=10
 
 
 
